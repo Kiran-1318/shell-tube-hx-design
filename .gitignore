@@ -4,4 +4,5 @@ results*/
 hx_results*/
 *-workspace/
 *.skill
+!dist/*.skill
 .DS_Store
