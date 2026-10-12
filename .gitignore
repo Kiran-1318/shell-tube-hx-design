@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+results*/
+hx_results*/
+*-workspace/
+*.skill
+.DS_Store

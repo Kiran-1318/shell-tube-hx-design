@@ -1,0 +1,48 @@
+{
+  "project": {"name": "200 kg/h Gasifier Plant - Flue Gas / Air Heat Recovery", "tag": "E-101", "rev": "0"},
+  "tube_side": "hot",
+  "hot": {
+    "name": "Flue gas",
+    "phase": "gas",
+    "from_combustion": {
+      "fuel_flow_Nm3_h": 400,
+      "fuel": {"N2": 0.51, "CO": 0.17, "H2": 0.15, "CO2": 0.15, "CH4": 0.02},
+      "excess_air": 0.10
+    },
+    "T_in": 500, "T_out": 150,
+    "P_kPa_abs": 101.025,
+    "fouling_m2K_W": 0.00176,
+    "allowable_dp_kPa": 1.5,
+    "tube_velocity_m_s": [8, 25],
+    "nozzle_velocity_in_m_s": 12, "nozzle_velocity_out_m_s": 12
+  },
+  "cold": {
+    "name": "Air",
+    "phase": "gas",
+    "components": {"nitrogen": 0.7812, "oxygen": 0.2095, "argon": 0.0093},
+    "basis": "mole",
+    "T_in": 30, "T_out": 120, "flow_kg_h": null,
+    "P_kPa_abs": 103.825,
+    "fouling_m2K_W": 0.00035,
+    "allowable_dp_kPa": 1.5,
+    "nozzle_velocity_in_m_s": 10, "nozzle_velocity_out_m_s": 8
+  },
+  "limits": {"area_safety_factor": 1.25, "min_metal_temp_C": 56.1, "T_metal_max_C": 400},
+  "mechanical": {"design_pressure_barg": 1.0, "corrosion_allowance_mm": 3.0, "tema_class": "C"},
+  "costs": {"hours_per_year": 6600},
+  "grid": {
+    "baffle": ["SEG", "NTIW"],
+    "tube": ["1in", "1.25in", "1.5in", "2in"],
+    "pitch_ratio": [1.25, 1.33, 1.5, 1.75, 2.0],
+    "angle": [30, 45, 90],
+    "Ntp": [1, 2],
+    "Ds_range_m": [0.30, 1.22],
+    "cut": [0.20, 0.25, 0.30, 0.35, 0.40, 0.45],
+    "B_ratio": [0.4, 0.6, 0.8, 1.0, 1.25, 1.5, 2.0, 2.5, 3.0, 4.0]
+  },
+  "rating_cases": [
+    {"label": "Flue gas in at 300 C", "hot": {"T_in": 300}, "cold": {"flow_kg_h": 1829}}
+  ],
+  "load_fractions": [0.75, 0.5],
+  "sweep": {"stream": "hot", "var": "T_in", "from": 300, "to": 700, "step": 25}
+}

@@ -1,0 +1,13 @@
+{
+  "project": {"name": "Cooling-water exchanger (example)", "tag": "E-201"},
+  "tube_side": "cold",
+  "hot": {"name": "Hot process water", "phase": "liquid", "components": {"water": 1.0},
+          "T_in": 90, "T_out": 60, "flow_kg_h": 30000, "P_kPa_abs": 400,
+          "fouling_m2K_W": 0.00018, "allowable_dp_kPa": 70},
+  "cold": {"name": "Cooling water", "phase": "liquid", "components": {"water": 1.0},
+           "T_in": 30, "T_out": null, "flow_kg_h": 45000, "P_kPa_abs": 450,
+           "fouling_m2K_W": 0.00035, "allowable_dp_kPa": 70, "tube_velocity_m_s": [1.0, 2.5]},
+  "mechanical": {"design_pressure_barg": 6.0},
+  "rating_cases": [{"label": "Cooling water at 35 C", "cold": {"T_in": 35}}],
+  "load_fractions": [0.5]
+}
